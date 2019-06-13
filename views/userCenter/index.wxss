@@ -1,0 +1,94 @@
+/* views/userCenter/index.wxss */
+page{
+  background-color: #F6F6F6;
+}
+.logoBtn{
+  width: 200rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background-color: #da7cfb
+}
+.noinfo{
+  font-size: 28rpx;
+  padding: 200rpx 0 0; 
+  text-align: center;
+  color: #979797;
+}
+.notext{
+  margin-bottom: 200rpx;
+}
+.logo{
+  position: relative;
+}
+.logo .back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.logo .userInfo,.selfCenter{
+  position: relative;
+  z-index: 2;
+  padding-top: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+}
+.userInfo > image{
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  margin:0 auto;
+  border-radius: 50%;
+}
+.userInfo .sex image{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 15rpx
+}
+.selfCenter{
+  font-size: 24rpx;
+  line-height: 60rpx;
+  padding: 80rpx 30rpx 20rpx;
+}
+.selfCenter > view{
+  flex: 1;
+}
+.gn{
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #333;
+  text-align: center;
+}
+.gn .btn{
+  width: 24%;
+  padding: 25rpx 0;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+}
+.gn > .btn:nth-child(4n){
+  border-right: none;
+}
+.gn > .btn image{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto 20rpx;
+}
+button.btn::after{
+  border: none;
+}
+.btn{
+  color: #333;
+  background-color: rgba(0,0,0,0);
+  line-height: 40rpx;
+  border-radius: 0;
+  padding: 0;
+  font-size: 24rpx;
+  margin: 0;
+}

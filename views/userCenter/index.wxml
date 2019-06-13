@@ -1,0 +1,36 @@
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data> -->
+<view wx:if="{{!userInfo}}" class="noinfo">
+  <view class="notext">您还未登录，请先进行登录.</view>
+  <button open-type="getUserInfo" class="logoBtn" bindgetuserinfo="bindGetUserInfo" wx:if="{{canIUse}}">登录</button>
+  <view wx:else>微信版本过低，请先升级微信再体验小程序</view>
+</view>
+<view wx:else>
+  <view class="logo">
+    <image src='../../images/user.jpg' class="back"></image>
+    <view class="userInfo">
+      <image src="{{userInfo.avatarUrl}}"></image>
+      <view class="sex flex a-i j-c">
+      {{userInfo.nickName}}
+        <image src="../../images/boy.png" wx:if="{{userInfo.gender===1}}"></image>
+        <image src="../../images/girl.png" wx:elif="{{userInfo.gender===2}}"></image>
+      </view>
+    </view>
+    <view class="selfCenter flex a-i">
+        <view wx:for="{{selfmsg}}" wx:key="{{index}}">
+              <view>{{item.title}}</view>
+              <view>{{item.num}}</view>
+        </view>
+    </view>
+  </view>
+  <view class="gn flex a-i">
+    <view wx:for="{{gnList}}" wx:key="{{index}}" wx:if="{{index!==gnList.length-1}}" class="btn">
+      <image src="{{item.img}}"></image>
+      <view>{{item.title}}</view>
+    </view>
+    <button bindcontact='handleContact' open-type="contact" class="btn">
+      <image src="{{gnList[gnList.length-1].img}}"></image>
+      <view>{{gnList[gnList.length-1].title}}</view>
+    </button>
+  </view>
+</view>

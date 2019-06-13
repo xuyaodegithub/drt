@@ -1,0 +1,4 @@
+<!--views/near/index.wxml-->
+<!-- <text>views/near/index.wxml</text> -->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}"  markers="{{markers}}" show-location circles="{{circles}}"></map>
+

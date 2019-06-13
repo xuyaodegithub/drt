@@ -1,0 +1,21 @@
+<!--views/index/index.wxml-->
+<!-- 111111111111111
+<van-button type="warning">默认按钮</van-button>
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    clearable
+    label="用户名"
+    placeholder="请输入用户名"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="密码"
+    placeholder="请输入密码"
+    border="{{ false }}"
+  />
+</van-cell-group> -->
+<c_swiper banner="{{swoperList}}"></c_swiper>  

@@ -1,0 +1,16 @@
+{
+  "component": false,
+  "usingComponents": {
+    "van-button": "/components/vant/button/index",
+    "van-field": "/components/vant/field/index",
+    "c_swiper" : "/components/swiper/swiper"
+  },
+  "navigationBarTitleText": "大耳推荐",
+  "navigationBarBackgroundColor": "#da7cfb",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f7f7f7",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "backgroundTextStyle": "dark",
+  "disableScroll": false
+}

@@ -1,0 +1,8 @@
+/* components/swiper.wxss */
+.swipeds image{
+  width: 100%;
+}
+.advers{
+  padding: 10rpx 0;
+  /* background-color: #F7F7F7; */
+}
