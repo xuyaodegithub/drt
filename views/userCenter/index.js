@@ -19,7 +19,7 @@ Page({
         { title: '我的足迹', img: '../../images/zj.png' },
         { title: '我的收藏', img: '../../images/sc.png' },
         { title: '我的发现', img: '../../images/fx.png' },
-        { title: '我的吃货队友', img: '../../images/xd.png' },
+        { title: '我的吃货队友', img: '../../images/fd.png' },
         { title: '我的玩乐', img: '../../images/wl.png' },
         {title:'我的客服',img:'../../images/kf.png'},
       ]
@@ -30,8 +30,8 @@ Page({
    */
   onLoad: function (options) {
     let _self=this
-    app.getUserInfo(()=>{
-      _self.setData({ userInfo: app.globalData.userInfo })
+    app.getUserInfo((userInfo)=>{
+      _self.setData({ userInfo: userInfo })
     })
     
 

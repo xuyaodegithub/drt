@@ -1,4 +1,6 @@
 // views/index/index.js
+var common = require("../../fetch/request.js")
+const app = getApp()
 Page({
 
   /**
@@ -15,7 +17,20 @@ Page({
       'http://img5.imgtn.bdimg.com/it/u=2366575006,2320261301&fm=26&gp=0.jpg'
     ]
   },
-
+  toseach(){
+    wx.navigateTo({
+      url: '../seachPage/index',
+    })
+  },
+  openScale(){
+    wx.scanCode({
+      onlyFromCamera: false,//是否只能从相机扫码，不允许从相册选择图片
+      scanType: ['qrCode'],
+      success:(res)=>{
+          console.log(res.result)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -55,7 +70,11 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.showNavigationBarLoading()
+    setTimeout(()=>{
+      wx.hideNavigationBarLoading()
+      wx.stopPullDownRefresh()
+    },2000)
   },
 
   /**

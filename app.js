@@ -1,5 +1,7 @@
 //app.js
 App({
+  baseUrl:'',
+  userInfoData:'',
   getUserInfo(callback) {// 获取用户信息
     if (this.globalData.userInfo && callback){
       callback(this.globalData.userInfo)
@@ -14,11 +16,25 @@ App({
               // 可以将 res 发送给后台解码出 unionId
               console.log(res)
               this.globalData.userInfo = res.userInfo
-
+              this.userInfoData = res.userInfo
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (callback) {
                 callback(res.userInfo)
+              }
+            }
+          })
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: '您还未登录，将前往登录',
+            confirmText:"前往",
+            confirmColor:"#8734cc",
+            success(res){
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
               }
             }
           })

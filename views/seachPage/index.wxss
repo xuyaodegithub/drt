@@ -1,0 +1,21 @@
+/* views/seachPage/index.wxss */
+page{
+  /* padding: 0 20rpx;
+  width: auto; */
+}
+.historys{
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #979797;
+  line-height: 40rpx;
+}
+.historys > text{
+  font-size: 28rpx;
+}
+.historys .flex{
+  margin-top: 30rpx;
+}
+.historys .flex text{
+  margin-right: 20rpx;
+}

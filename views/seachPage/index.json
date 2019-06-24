@@ -1,16 +1,13 @@
 {
   "component": false,
   "usingComponents": {
-    "van-button": "/components/vant/button/index",
-    "van-field": "/components/vant/field/index",
-    "c_swiper" : "/components/swiper/swiper",
     "van-search": "/components/vant/search/index"
   },
-  "navigationBarTitleText": "大耳推荐",
+  "navigationBarTitleText": "大耳查询",
   "navigationBarBackgroundColor": "#da7cfb",
   "navigationBarTextStyle": "white",
   "backgroundColor": "#f7f7f7",
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "onReachBottomDistance": 50,
   "backgroundTextStyle": "dark",
   "disableScroll": false

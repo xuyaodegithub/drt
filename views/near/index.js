@@ -31,7 +31,7 @@ Page({
     ],//标记点polyline
     polyline: [],//路线
     circles: [
-      { latitude: '30.2084', longitude: '120.21201', color: '#0DDDF4', fillColor: '#B4EBF1', radius: 100, strokeWidth: 6 }
+      { latitude: '30.2084', longitude: '120.21201', color: '#0DDDF4', fillColor: '#B4EBF1', radius: 60, strokeWidth: 6 }
     ],//圆
   },
 
@@ -39,7 +39,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getselfLocal()
+   
   },
   //获取位置授权
   getselfLocal() {
@@ -112,7 +112,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getselfLocal()
   },
 
   /**

@@ -13,6 +13,9 @@
 .j-c{
   justify-content: center;
 }
+f-w{
+  flex-wrap: wrap;
+}
 .fixed{
   position: fixed;
   width: 90rpx;

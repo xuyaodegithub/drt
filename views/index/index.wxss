@@ -1,1 +1,12 @@
 /* views/index/index.wxss */
+.seach {
+  padding: 0 20rpx;
+  background-color: #da7cfb;
+}
+.seach image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.seach .slotinput{
+  flex: 1;
+}

@@ -1,21 +1,15 @@
-<!--views/index/index.wxml-->
-<!-- 111111111111111
-<van-button type="warning">默认按钮</van-button>
-<van-cell-group>
-  <van-field
-    value="{{ username }}"
-    clearable
-    label="用户名"
-    placeholder="请输入用户名"
-    bind:click-icon="onClickIcon"
-  />
+<view class="flex a-i seach">
+  <image src="../../images/sm.png" bindtap="openScale"></image>
+  <van-search
+  class="slotinput"
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  shape="round"
+  bindtap="toseach"
+  disabled
+  background="#da7cfb"
+  bind:search="onSearch"
+/>
+</view>
 
-  <van-field
-    value="{{ password }}"
-    type="password"
-    label="密码"
-    placeholder="请输入密码"
-    border="{{ false }}"
-  />
-</van-cell-group> -->
 <c_swiper banner="{{swoperList}}"></c_swiper>  
