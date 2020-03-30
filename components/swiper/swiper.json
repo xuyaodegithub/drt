@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "van-notice-bar": "@vant/weapp/notice-bar"
+  }
 }

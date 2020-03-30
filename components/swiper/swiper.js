@@ -1,6 +1,8 @@
 // components/swiper.js
 const app = getApp()
+const mixins = require('../../utils/behaviors.js')
 Component({
+  behaviors: [mixins],
   /**
    * 组件的属性列表
    */
@@ -10,7 +12,9 @@ Component({
     },
     advers:{
       type:Array
-    }
+    },
+    height:Number,
+    notice:String
   },
 
   /**

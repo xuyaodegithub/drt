@@ -6,29 +6,36 @@
 // },
 const app = getApp()
 function fetch(data) {
-  wx.request({
-    url: app.baseUrl+data.url,
-    data: data.data,
-    dataType: 'json',
-    method: data.type ? data.type : 'GET',
-    header: {
-      'content-type': 'application/json',
-      'token': app.token
-      // 'cookie': wx.getStorageSync("sessionid")//读取cookie
-    },
-    success: function (res) {
-      // console.log(res.statusCode)
-      if (res.data.code == 0)  data.callback(res)
-      else wx.showToast({title: res.data.msg,icon: 'none'});
-    },
-    fail:function(res){
-      wx.showToast({
-        title: '请求错误',
-        icon: 'none',
-        duration: 2000
-      });
-    }
+  return new Promise((resole,reject)=>{
+    wx.request({
+      url: app.baseUrl + data.url,
+      data: data.data,
+      dataType: 'json',
+      method: data.type ? data.type : 'GET',
+      header: {
+        'content-type': 'application/json',
+        // 'token': app.token
+        // 'cookie': wx.getStorageSync("sessionid")//读取cookie
+      },
+      success: function (res) {
+        // console.log(res.statusCode)
+        if (res.data.code == 0) resole(res.data)
+        else {
+          wx.showToast({ title: res.data.msg, icon: 'none' });
+          reject(res)
+        }
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '请求错误',
+          icon: 'none',
+          duration: 2000
+        });
+        reject(res)
+      }
+    })
   })
+ 
 }
 // function mothod3(data) {
 //   wx.request({

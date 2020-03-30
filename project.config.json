@@ -39,6 +39,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 0,
 			"list": [
@@ -46,6 +50,14 @@
 					"id": -1,
 					"name": "wode ",
 					"pathName": "views/userCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "views/detial/index",
+					"pathName": "views/detial/index",
+					"query": "",
 					"scene": null
 				}
 			]

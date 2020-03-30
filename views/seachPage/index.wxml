@@ -12,3 +12,9 @@
       <text wx:for="{{seachHistory}}" wx:key="{{index}}">{{item}}</text>
   </view>
 </view>
+<view class="historys hot">
+  <text>热门搜索:</text>
+  <view class="flex f-w">
+      <text wx:for="{{seachHistory}}" wx:key="{{index}}">{{item}}</text>
+  </view>
+</view>

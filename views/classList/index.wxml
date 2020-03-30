@@ -1,2 +1,54 @@
-<!--views/classList/index.wxml-->
-<text>views/classList/index.wxml</text>
+<van-sticky>
+  <view class="header" style="padding-top:{{btnInfo.top}}px;">
+    <view class="flex a-i over" bindtap="showPopup">
+      <van-icon name="location-o" custom-style="font-size:32rpx;margin-right:20rpx;" />{{region[1]=='全部' ? region[0] : region[1]}}
+    </view>
+  </view>
+</van-sticky>
+<v-seach placehold="请输入想要查询的宝贝吧"></v-seach>
+<van-sticky offset-top="{{btnInfo.top+btnInfo.height}}">
+  <view class="screen" catchtouchmove="">
+    <van-dropdown-menu>
+      <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bindchange="change" data-idx="1" catchtouchmove="prevaitD"/>
+      <van-dropdown-item value="{{ value2 }}" options="{{option2}}" bindchange="change" data-idx="2" catchtouchmove="prevaitD"/>
+    </van-dropdown-menu>
+  </view>
+</van-sticky>
+<view class="list flex j-b">
+  <view class="left">
+    <block wx:for="{{leftlist}}" wx:key="index">
+      <view bindtap="toDetial" data-id="{{item.id}}">
+        <image src="{{item.headurl}}" mode="widthFix"></image>
+        <view class="title over">{{item.name}}</view>
+        <view class="flex price j-b">
+          <text>￥{{item.price}}</text>
+          <view class="text">5000
+            <van-icon name="fire" custom-style="color:#EE3C42;" />
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="right">
+    <block wx:for="{{rightlist}}" wx:key="index">
+      <view bindtap="toDetial" data-id="{{item.id}}">
+        <image src="{{item.headurl}}" mode="widthFix"></image>
+        <view class="title over">{{item.name}}</view>
+        <view class="flex price j-b">
+          <text>￥{{item.price}}</text>
+          <view class="text">5000
+            <van-icon name="fire" custom-style="color:#EE3C42;" />
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<van-popup show="{{ show }}" position="bottom" bind:click-overlay="cancel">
+  <!-- <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker> -->
+  <van-area area-list="{{ areaList }}" value="1101" columns-num="{{ 2 }}" columns-placeholder="{{ ['全国', '全部'] }}" bind:confirm="confirm" bind:cancel="cancel" />
+</van-popup>

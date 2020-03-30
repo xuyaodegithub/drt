@@ -4,8 +4,8 @@
     
   },
   "navigationBarTitleText": "附近",
-  "navigationBarBackgroundColor": "#da7cfb",
-  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
   "backgroundColor": "#f7f7f7",
   "enablePullDownRefresh": true,
   "onReachBottomDistance": 50,

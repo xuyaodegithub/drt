@@ -1,0 +1,51 @@
+<!--pages/orders/index.wxml-->
+<view>
+  <navigationBar id="navigationBar" placeholderBg="" color="{{color}}" title="{{title}}" back="{{true}}" background="{{barBg}}" fixed="{{fixed}}"  backConfirm="{{backConfirm}}"  backStyle="{{backStyle}}"  backEvent="{{backEvent}}" bind:back="backEvent"  backHomeEvent="{{backHomeEvent}}" bind:backHome="backHomeEvent"></navigationBar>
+<!-- 切换栏 -->
+  <view class="swiper-tab">
+    <block wx:for="{{swipertab}}" wx:key="sptab">
+      <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}        </view>
+    </block>
+  </view>
+  <view class="orderBtn">
+    <view class="buyBtn" bindtap="something" style="color:{{isChange == 1 ? '#666666' : '#25CFB6'}};border:{{isChange == 1 ? '1px solid #666666' : '1px solid #25CFB6'}};" data-index="0">已购</view>
+    <view class="saleBtn" bindtap="something" style="color:{{isChange == 0 ? '#666666' : '#25CFB6'}};border:{{isChange == 0 ? '1px solid #666666' : '1px solid #25CFB6'}};" data-index="1">已销售</view>
+  </view>
+  <swiper current="{{currtab}}" class="swiper-box" duration="0"style="height:{{deviceH-31}}px;"  bindchange="tabChange">
+
+  <!-- 全部 -->
+    <swiper-item catchtouchmove="stopTouchMove">
+      <scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-31}}px;">
+        111111
+      </scroll-view>
+    </swiper-item>
+    <!-- 待付款 -->
+    <swiper-item catchtouchmove="stopTouchMove">
+      <scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-31}}px;">
+       22222
+      </scroll-view>
+    </swiper-item>
+    <!-- 待收货 -->
+    <swiper-item catchtouchmove="stopTouchMove">
+      <scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-31}}px;">
+      3333
+      </scroll-view>
+    </swiper-item>
+    <!-- 已完成 -->
+    <swiper-item catchtouchmove="stopTouchMove">
+      <scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-31}}px;">
+        4444
+      </scroll-view>
+    </swiper-item>
+    <!-- 已取消 -->
+    <swiper-item catchtouchmove="stopTouchMove">
+      <scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-31}}px;">
+        555
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="settlement" style="display:{{isChange == 0 ? 'none' : 'block'}}">
+    <view class="settleContent1">销售总金额：￥{{allUserOrders.money}}</view>
+    <view class="settleContent2">销售总数量：{{allUserOrders.count}}</view>
+</view>

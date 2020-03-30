@@ -1,0 +1,92 @@
+/* views/detial/index.wxss */
+page{
+  padding-bottom: 120rpx;
+}
+.infoMsg{
+  background-color: #fff;
+  padding-bottom: 20rpx;
+}
+.name{
+  padding:10rpx 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 56rpx;
+  margin-bottom: 30rpx;
+}
+.price{
+  padding:20rpx;
+  font-size: 36rpx;
+  color: #CC2A39;
+  font-weight: 600;
+  line-height: 56rpx;
+  background: linear-gradient(to right,#f9eefa,#f0b1f3)
+}
+.tags{
+  padding:0 20rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1;
+  margin: 20rpx 0 0;
+}
+.comment{
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.comment .hh2{
+  font-size: 28rpx;
+  color: #666;
+  line-height: 56rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 1px 1px #eee;
+}
+.comment .hh2 .text:last-child{
+  font-size: 24rpx;
+  color: #CC2A39;
+}
+.comItem{
+  padding: 15rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.comItem .user {
+  font-size: 24rpx;
+  color: #333;
+}
+.comItem .user .img{
+  position: relative;
+  width: 70rpx;
+  height: 70rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.comItem .user image,.comItem .imgs image{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.comItem .user text{
+  margin-left: auto;
+}
+.imglisy{
+  margin-top: 20rpx;
+}
+.comItem .imgs{
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  overflow: hidden;
+  margin-right: 20rpx
+}
+.comItem .msg{
+  margin: 10rpx 0;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 36rpx;
+}
+.comItem .sku{
+  font-size: 24rpx;
+  color: #999;
+}

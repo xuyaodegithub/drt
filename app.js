@@ -49,12 +49,12 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
-      success: res => {
-        console.log(res,'code')
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    // wx.login({
+    //   success: res => {
+    //     console.log(res,'code')
+    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //   }
+    // })
     this.getUserInfo()
   
   },
@@ -62,7 +62,7 @@ App({
     // 获取小程序更新机制兼容
     if (wx.canIUse('getUpdateManager')) {
       const updateManager = wx.getUpdateManager()
-      console.log(updateManager)
+      // console.log(updateManager)
       updateManager.onCheckForUpdate(function (res) {
         // 请求完新版本信息的回调
         if (res.hasUpdate) {

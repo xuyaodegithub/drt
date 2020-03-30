@@ -19,3 +19,6 @@ page{
 .historys .flex text{
   margin-right: 20rpx;
 }
+.hot{
+  margin-top: 30rpx;
+}

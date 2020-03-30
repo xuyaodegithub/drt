@@ -1,15 +1,39 @@
-<view class="flex a-i seach">
-  <image src="../../images/sm.png" bindtap="openScale"></image>
-  <van-search
-  class="slotinput"
-  value="{{ value }}"
-  placeholder="请输入搜索关键词"
-  shape="round"
-  bindtap="toseach"
-  disabled
-  background="#da7cfb"
-  bind:search="onSearch"
-/>
+<van-sticky>
+<view class="flex a-i seach" style="padding-top:{{btnInfo.top}}px;">
+  <!-- <image src="../../images/sm.png" bindtap="openScale"></image> -->
+  <view class="seachBox flex a-i" style="height:{{btnInfo.height}}" bindtap="toseach">
+    <van-icon name="search" /> 请输入想要查找的内容
+  </view>
 </view>
-
-<c_swiper banner="{{swoperList}}"></c_swiper>  
+</van-sticky>
+<c_swiper banner="{{swoperList}}" height="{{350}}" notice="{{notice}}"></c_swiper>  
+<view class="nav flex f-w">
+  <view wx:for="{{classList}}" wx:key="{{index}}">
+    <image src="{{item.img}}"></image>
+    <text>{{item.title}}</text>
+  </view>
+</view>
+<van-sticky offset-top="{{btnInfo.top+btnInfo.height}}">
+<scroll-view scroll-x class="scroll">
+  <view class="all">
+    <view wx:for="{{navList}}" wx:key="{{index}}" class="{{active=== index ? 'active' : ''}}" bindtap="selectType" data-idx="{{index}}">{{item.title}}</view>
+  </view>
+</scroll-view>
+</van-sticky>
+<view class="prolist flex f-w">
+  <block wx:for="{{proList}}" wx:key="{{item.id}}">
+    <view bindtap="toDetial" data-id="{{item.id}}">
+      <view class="imgs">
+        <image src="{{item.headurl}}" mode="widthFix"></image>
+      </view>
+      <view class="title">{{item.name}}</view>
+      <view class="price flex j-b">
+        <text>￥{{item.price}}</text>
+        <text class="over">产地：{{item.marketname}}</text>
+      </view>
+      <view class="tag">
+        {{index%2 ===0 ? '热销':'上新'}}
+      </view>
+    </view>
+  </block>
+</view>

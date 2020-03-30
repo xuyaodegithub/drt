@@ -1,8 +1,6 @@
 {
   "pages": [
     "views/index/index",
-    "pages/index/index",
-    "pages/logs/logs",
     "views/classList/index",
     "views/near/index",
     "views/userCenter/index",
@@ -17,6 +15,15 @@
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 10
   },
+  "subpackages": [
+    {
+      "root": "views/detial",
+      "pages": [
+        "index",
+        "comment/index"
+      ]
+    }
+  ],
   "tabBar": {
     "backgroundColor": "#fff",
     "borderStyle": "black",
@@ -25,9 +32,9 @@
     "list": [
       {
         "pagePath": "views/index/index",
-        "text": "推荐",
-        "iconPath": "images/tuijian0.png",
-        "selectedIconPath": "images/tuijian.png"
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index2.png"
       },
       {
         "pagePath": "views/classList/index",
@@ -48,6 +55,12 @@
         "selectedIconPath": "images/wode.png"
       }
     ]
+  },
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon",
+    "van-sticky": "@vant/weapp/sticky",
+    "van-popup": "@vant/weapp/popup",
+    "van-button": "@vant/weapp/button"
   },
   "sitemapLocation": "sitemap.json",
   "permission": {
