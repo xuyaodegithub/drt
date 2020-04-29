@@ -13,7 +13,7 @@ page{
   line-height: 56rpx;
   margin-bottom: 30rpx;
 }
-.price{
+.infoMsg .price{
   padding:20rpx;
   font-size: 36rpx;
   color: #CC2A39;
@@ -89,4 +89,67 @@ page{
 .comItem .sku{
   font-size: 24rpx;
   color: #999;
+}
+.buyPup{
+  padding:30rpx
+}
+.buyPup .headerImg{
+  padding-bottom:20rpx;
+  border-bottom: 1px solid #eee; 
+}
+.headerImg .right{
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+  line-height: 1;
+  padding: 10rpx 0;
+}
+.headerImg .price{
+  font-size: 40rpx;
+  color: #ee0a24;
+}
+.headerImg .right text:nth-child(2){
+  margin: 20rpx 0;
+  display: block;
+}
+.buyPup .list{
+  padding:0 20rpx;
+  max-height: 700rpx;
+  font-size: 28rpx;
+  overflow-y: scroll;
+  line-height: 44rpx;
+}
+.buyPup .list >view{
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee; 
+}
+.buyPup .list .title{
+  margin-bottom: 20rpx;
+}
+.buyPup .list .van-tag{
+  display: inline-block;
+  margin:0 30rpx 30rpx 0;
+  min-width: 60rpx;
+  text-align: center;
+}
+.buyNum{
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  line-height: 44rpx;
+   border-bottom: 1px solid #eee; 
+}
+.buyBtns{
+  overflow: hidden;
+  border-radius: 44rpx;
+  margin: 30rpx 0 20rpx;
+}
+.buyBtns .van-button{
+  width: 50%;
+  border-radius: none;
+}
+.list .plain{
+color: #969799;
+}
+.list .active {
+  color: #ee0a24;
 }

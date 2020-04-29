@@ -1,0 +1,86 @@
+/* views/shopcar/index.wxss */
+page{
+  padding: 30rpx;
+  padding-bottom: 100rpx;
+  width: initial;
+}
+.store{
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  line-height: 1
+}
+.store .van-icon{
+  margin-right: 25rpx;
+  font-size: 38rpx;
+}
+.storeName{
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 60rpx;
+}
+.p_list{
+   margin-bottom: 60rpx;
+}
+.p_list .center{
+  border-radius: 15rpx;
+  overflow: hidden;
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+}
+.p_list .right{
+  min-width: 0;
+  flex: 1;
+}
+.p_list .right .title{
+  margin-bottom: 20rpx;
+}
+.p_list .right .title .over{
+  flex: 1;
+  font-size: 26rpx;
+}
+.p_list .right .title .van-icon{
+  margin: 0 0 0 20rpx;
+}
+.p_list .right .sku{
+  font-size: 24rpx;
+  line-height: 42rpx;
+  background-color: #F4F4F4;
+  color: #9c9c9c;
+  margin-bottom: 40rpx;
+  padding: 0 20rpx;
+}
+.p_list .right .price{
+  font-size: 36rpx;
+  color: #C2202D;
+  flex: 1;
+  margin-right: 10rpx;
+}
+.steppers{
+  margin-left: auto;
+}
+.van-stepper > view,.van-stepper > input{
+  width: 44rpx;
+  height: 44rpx
+}
+.alls{
+  line-height: 1;
+}
+.alls .van-icon{
+  font-size: 38rpx;
+  margin-right: 20rpx;
+}
+.van-submit-bar .van-button{
+  background: linear-gradient(to right, #ff6034, #ee0a24);
+}
+.empty{
+  font-size: 28rpx;
+  text-align: center;
+  padding: 80rpx 0 0 0;
+  color: #9c9c9c;
+}
+.empty .van-icon{
+  margin-bottom: 40rpx;
+}

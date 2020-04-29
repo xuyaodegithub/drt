@@ -1,15 +1,14 @@
 {
-  "component": false,
   "usingComponents": {
-    "van-field": "@vant/weapp/field",
-    "c_swiper": "/components/swiper/swiper"
+    "van-image": "@vant/weapp/image/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index"
   },
-  "navigationBarTitleText": "大耳推荐",
+  "navigationBarTitleText": "购物车",
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
   "backgroundColor": "#f7f7f7",
   "enablePullDownRefresh": false,
-  "navigationStyle": "custom",
   "onReachBottomDistance": 50,
   "backgroundTextStyle": "dark",
   "disableScroll": false

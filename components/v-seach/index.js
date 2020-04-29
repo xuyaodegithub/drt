@@ -6,7 +6,20 @@ Component({
   properties: {
     placehold:String
   },
-
+  // observers: {//只能在组件中使用-----数据监听
+  //   '**': function (skuList) {
+  //     console.log(111, skuList)
+  //     let all = skuList.every(item => item.selectIdx > -1), str = '已选择：'
+  //     if (all) {
+  //       skuList.map((item, idx) => {
+  //         str += !idx ? `${item.list[item.selectIdx].name}` : `,${item.list[item.selectIdx].name}`
+  //       })
+  //       this.setData({
+  //         skuselect: str
+  //       })
+  //     } else this.setData({ skuselect: '请选择：规格' })
+  //   }
+  // },
   /**
    * 组件的初始数据
    */

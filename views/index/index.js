@@ -74,6 +74,15 @@ Page({
                   }
                 })
               },
+              fail(err){
+                wx.showModal({
+                  title: '提示',
+                  content: '微信步数授权失败，前往授权？',
+                  success(){
+                    wx.openSetting()
+                  }
+                })
+              }
             })
           }else{
             console.log(222)
@@ -92,7 +101,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.userRun()
+    // this.userRun()
     wx.getSystemInfo({
       success:(res)=>{
         const sh = res.statusBarHeight

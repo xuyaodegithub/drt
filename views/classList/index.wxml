@@ -44,6 +44,7 @@
     </block>
   </view>
 </view>
+<van-divider contentPosition="center">我是有底线的哦</van-divider>
 <van-popup show="{{ show }}" position="bottom" bind:click-overlay="cancel">
   <!-- <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
     <view class="picker">

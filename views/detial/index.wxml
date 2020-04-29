@@ -3,10 +3,10 @@
 <c_swiper banner="{{swoperList}}" height="{{750}}"></c_swiper>
 <view class="infoMsg">
   <view class="price">
-    ￥125.00
+    ￥{{proMsg.price}}
   </view>
   <view class="name">
-    枫叶休闲裤套装
+    {{proMsg.name}}
   </view>
   <view class="tags flex j-b">
     <text>特产小店铺</text>
@@ -17,9 +17,11 @@
 <view class="comment">
   <view class="hh2 flex j-b">
     <text>商品评价（244）</text>
-    <view class="text flex a-i" bindtap="navTocomList">查看全部<van-icon name="arrow" /></view>
+    <view class="text flex a-i" bindtap="navTocomList">查看全部
+      <van-icon name="arrow" />
+    </view>
   </view>
-  <view class="comItem" wx:for="{{userCom}}" wx:key="{{index}}">
+  <view class="comItem" wx:for="{{userCom}}" wx:key="index">
     <view class="user flex a-i">
       <view class="img">
         <image src="{{item.headerImg}}" mode="widthFix"></image>
@@ -36,12 +38,39 @@
     <view class="sku">{{item.sku}}</view>
   </view>
 </view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom" round closeable custom-class="buyPup">
+  <view class="headerImg flex">
+    <van-image width="150rpx" height="150rpx" fit="contain" src="http://imagecdn0.17huo.com/5030afff843e1166e47df0ceb5ce749e.jpg" />
+    <view class="right">
+      <view class="price">￥{{proMsg.price}}</view>
+      <text>剩余227件</text>
+      <text>{{skuselect}}</text>
+    </view>
+  </view>
+  <view class="list">
+    <view wx:for="{{skuList}}" wx:key="name">
+      <view class="title">{{item.name}}</view>
+      <view>
+        <van-tag plain size="medium" wx:for="{{item.list}}" wx:for-item="itemson" wx:for-index="idxson" wx:key="id" data-idx="{{index}}" data-idxson="{{idxson}}" color="{{item.selectIdx==idxson ? '#ee0a24' : '#969799'}}" bindtap="seletItem">{{itemson.name}}</van-tag>
+        <!-- {{item.selectIdx===idxson ? '#ee0a24' : '#969799'}} -->
+      </view>
+    </view>
+  </view>
+  <view class="buyNum flex j-b a-i">
+    <text>购买数量</text>
+    <van-stepper value="{{buyNum}}" min="1" integer bind:change="changNum" />
+  </view>
+  <view class="buyBtns">
+    <van-button color="linear-gradient(to right, #ffd01e, #ff8917)" bindtap="buyItem">加入购物车</van-button>
+    <van-button color="linear-gradient(to right, #ff6034, #ee0a24)" bindtap="buyItem">立即购买</van-button>
+  </view>
+</van-popup>
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="客服" open-type="contact" />
   <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
   <van-goods-action-icon icon="shop-o" text="店铺" />
-  <van-goods-action-button text="加入购物车" type="warning" loading="{{false}}" />
-  <van-goods-action-button text="立即购买" />
+  <van-goods-action-button text="加入购物车" type="warning" loading="{{false}}" bindtap="buyAdd" data-idx="1" />
+  <van-goods-action-button text="立即购买" bindtap="buyAdd" data-idx="2" />
 </van-goods-action>
 <van-divider contentPosition="center">宝贝详情</van-divider>
 <rich-text nodes="{{html}}"></rich-text>

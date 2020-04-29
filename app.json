@@ -4,7 +4,8 @@
     "views/classList/index",
     "views/near/index",
     "views/userCenter/index",
-    "views/seachPage/index"
+    "views/seachPage/index",
+    "views/shopcar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,6 +42,12 @@
         "text": "分类",
         "iconPath": "images/list0.png",
         "selectedIconPath": "images/list.png"
+      },
+      {
+        "pagePath": "views/shopcar/index",
+        "text": "购物车",
+        "iconPath": "images/shopcar.png",
+        "selectedIconPath": "images/shopcar1.png"
       },
       {
         "pagePath": "views/near/index",

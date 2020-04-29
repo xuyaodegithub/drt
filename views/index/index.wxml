@@ -8,7 +8,7 @@
 </van-sticky>
 <c_swiper banner="{{swoperList}}" height="{{350}}" notice="{{notice}}"></c_swiper>  
 <view class="nav flex f-w">
-  <view wx:for="{{classList}}" wx:key="{{index}}">
+  <view wx:for="{{classList}}" wx:key="title">
     <image src="{{item.img}}"></image>
     <text>{{item.title}}</text>
   </view>
@@ -16,12 +16,12 @@
 <van-sticky offset-top="{{btnInfo.top+btnInfo.height}}">
 <scroll-view scroll-x class="scroll">
   <view class="all">
-    <view wx:for="{{navList}}" wx:key="{{index}}" class="{{active=== index ? 'active' : ''}}" bindtap="selectType" data-idx="{{index}}">{{item.title}}</view>
+    <view wx:for="{{navList}}" wx:key="title" class="{{active=== index ? 'active' : ''}}" bindtap="selectType" data-idx="{{index}}">{{item.title}}</view>
   </view>
 </scroll-view>
 </van-sticky>
 <view class="prolist flex f-w">
-  <block wx:for="{{proList}}" wx:key="{{item.id}}">
+  <block wx:for="{{proList}}" wx:key="id">
     <view bindtap="toDetial" data-id="{{item.id}}">
       <view class="imgs">
         <image src="{{item.headurl}}" mode="widthFix"></image>

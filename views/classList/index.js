@@ -162,16 +162,6 @@ Page({
               that.setData({
                 imgs: ress.tempFilePath
               })
-              // wx.uploadFile({
-              //   url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-              //   filePath: ress.tempFilePath,
-              //   name: 'file',
-              //   success(res) {
-              //     const data = res.data
-              //     //do something
-
-              //   }
-              // })
             }
           })
         })

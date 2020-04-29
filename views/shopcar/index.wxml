@@ -1,0 +1,40 @@
+<!--views/shopcar/index.wxml-->
+<view wx:if="{{storeList.length>0}}">
+  <view wx:for="{{storeList}}" wx:key="title" class="store">
+    <view class="storeName flex a-i van-ellipsis">
+      <van-icon name="{{item.selected ? 'checked' : 'circle'}}" color="{{item.selected ? '#C2202D' : ''}}" bindtap="selectStore" data-idx="{{index}}" /> {{item.title}}
+    </view>
+    <view wx:for="{{item.list}}" wx:key="name" class="p_list flex a-i" wx:for-item="itemson" wx:for-index="idxson">
+      <view class="left">
+        <van-icon name="{{itemson.selected ? 'checked' : 'circle'}}" color="{{itemson.selected ? '#C2202D' : ''}}" bindtap="selectItem" data-idx="{{index}}" data-idxson="{{idxson}}" />
+      </view>
+      <view class="center">
+        <van-image width="180rpx" height="180rpx" src="{{itemson.img}}" />
+      </view>
+      <view class="right">
+        <view class="flex title a-i">
+          <view class="over">{{itemson.name}}</view>
+          <van-icon name="delete" bindtap="deleteItem" data-idx="{{index}}" data-idxson="{{idxson}}" />
+        </view>
+        <view class="sku">{{itemson.sku}}</view>
+        <view class="flex a-i j-b f-w">
+          <view class="price">￥{{itemson.price}}</view>
+          <view class="steppers">
+            <van-stepper value="{{ itemson.num }}" min="1" bind:change="changNum" data-idx="{{index}}" data-idxson="{{idxson}}" integer/>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+
+  </view>
+  <van-submit-bar price="{{ allPrice }}" button-text="去结算" bind:submit="onClickButton">
+    <view class="flex a-i alls" bindtap="selectAlls">
+      <van-icon name="{{selectedAll ? 'checked' : 'circle'}}" color="{{selectedAll ? '#C2202D' : ''}}" />全选</view>
+  </van-submit-bar>
+</view>
+<view wx:else class="empty">
+  <van-icon name="cart-circle-o" color="#8734cc" size="120rpx;" />
+  <view>购物车太空了哦~ 快去逛逛吧！</view>
+</view>

@@ -5,6 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    proMsg:{
+      name:'枫叶休闲裤套装',
+      price:'125.00'
+    },
+    skuList:[],
+    buyNum:1,
     swoperList: [
       'http://imagecdn0.17huo.com/5030afff843e1166e47df0ceb5ce749e.jpg',
       'http://imagecdn0.17huo.com/df76dd5ab01685c3437fb4ac8a2426de.jpg',
@@ -56,7 +62,10 @@ Page({
 <div align="center"><img style="display:block;width:100%;" src="http://kan.027cgb.com/550929/2095/2095_17.jpg"></div>
 <div align="center"><img style="display:block;width:100%;" src="http://kan.027cgb.com/550929/2095/2095_18.jpg"></div>
 <div align="center"><img style="display:block;width:100%;" src="http://kan.027cgb.com/550929/2095/2095_19.jpg"></div>
-<div align="center"><img style="display:block;width:100%;" src="http://kan.027cgb.com/550929/2095/2095_20.jpg"></div>    </div>`
+<div align="center"><img style="display:block;width:100%;" src="http://kan.027cgb.com/550929/2095/2095_20.jpg"></div>    </div>`,
+    show:false,
+    buyOrAdd:true,
+    skuselect:'请选择：规格'
   },
   watchImgs(e){
     const [item, idx] = [e.currentTarget.dataset.item, e.currentTarget.dataset.idx]
@@ -75,8 +84,61 @@ Page({
    */
   onLoad: function (options) {
     console.log(options.id)
+    this.initProData()
   },
+  initProData(){
+    let skuList = [{
+      name: '颜色',
+      list: [{ name: '红色', id: 1 }, { name: '黄色', id: 2 }, { name: '蓝色', id: 3 }, { name: '绿色', id: 4 }, { name: '青色', id: 5 }, { name: '紫色', id: 6 }, { name: '橙色', id: 11 }, { name: '天蓝色', id: 12 },],
+    }, {
+        name: '尺寸',
+        list: [{ name: 'X', id: 7 }, { name: 'XL', id: 8 }, { name: 'XXL', id: 9 }, { name: 'M', id: 10 },]
+      }, {
+        name: '款式',
+        list: [{ name: '潮流', id: 20 },]
+      }]
+    skuList.map(item => { item.list.length === 1 ? item.selectIdx = 0 : item.selectIdx=-1})
+    this.setData({ skuList: skuList})
+  },
+  changNum(e){
+    console.log(e.detail,this.data.buyNum)
+  },
+  onClose(){
+    this.setData({ show: false })
+  },
+  buyAdd(e){
+    const idx=e.currentTarget.dataset.idx;
+    this.setData({ show: true, buyOrAdd: idx==1 ? false : true })
+  },
+  seletItem(e){
+    let skulist = this.data.skuList
+    const idx = e.currentTarget.dataset.idx, idxson = e.currentTarget.dataset.idxson;
+    if (idxson == skulist[idx].selectIdx)return;
+    skulist[idx].selectIdx = idxson
+    this.setData({ skuList: skulist }, this.setSkuTitle)
 
+  },
+  buyItem(){
+    const allS = this.data.skuList.every(item=>item.selectIdx>-1)
+    if (!allS){
+      wx.showToast({
+        title: '请先选择规格',
+        icon:'none'
+      })
+      return;
+    }
+  },
+  setSkuTitle(){
+    let all = this.data.skuList.every(item => item.selectIdx > -1), str = '已选择：'
+    if (all) {
+      this.data.skuList.map((item, idx) => {
+        str += !idx ? `${item.list[item.selectIdx].name}` : `、${item.list[item.selectIdx].name}`
+      })
+      this.setData({
+        skuselect: str
+      })
+    } else this.setData({ skuselect: '请选择：规格' })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
