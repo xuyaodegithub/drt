@@ -175,7 +175,8 @@ Page({
       ll = this.data.leftlist,
       rl = this.data.rightlist,
       lh = this.data.leftH,
-      rh = this.data.rightH;
+      rh = this.data.rightH,
+      idxson=0;
     datalist.map((item, idx) => {
       wx.getImageInfo({
         src: item.headurl,
@@ -187,7 +188,10 @@ Page({
             rh = rh + (345 * res.height / res.width)
             rl.push(item)
           }
-          if (idx === datalist.length - 1) {
+        },
+        complete:()=>{
+          idxson+=1;
+          if (idxson === datalist.length) {
             this.setData({ leftlist: ll, rightlist: rl, leftH: lh, rightH: rh })
             wx.hideLoading()
           }
