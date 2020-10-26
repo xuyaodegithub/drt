@@ -20,7 +20,7 @@
         <view class="flex a-i j-b f-w">
           <view class="price">￥{{itemson.price}}</view>
           <view class="steppers">
-            <van-stepper value="{{ itemson.num }}" min="1" bind:change="changNum" data-idx="{{index}}" data-idxson="{{idxson}}" integer/>
+            <van-stepper value="{{ itemson.num }}" min="1" bind:change="changNum" data-idx="{{index}}" data-idxson="{{idxson}}" integer async-change/>
           </view>
         </view>
 
